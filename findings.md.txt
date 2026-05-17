@@ -1,0 +1,118 @@
+📊 E-Commerce Analytics — Business Findings Report
+
+Dataset:Olist Brazilian E-Commerce (2016–2018)  
+Analyst: Golam Rabbi  
+Tools: Python (pandas, matplotlib, seaborn) · PostgreSQL · Power BI
+
+Executive Summary: 
+
+
+Analysis of 96,000+ delivered orders across a 20-month period reveals four 
+critical business problems: a customer retention crisis, geographic logistics 
+failures, freight margin risk in key categories, and a direct causal link 
+between delivery delays and review score collapse.
+
+
+Finding 1 — Customer Retention Crisis (Most Critical)
+
+The cohort retention analysis reveals near-zero repeat purchase behavior 
+across all customer cohorts. Retention drops to effectively 0–1% by Month 1 
+across every cohort from 2017-02 through 2018-08.
+
+Implication: The business is running entirely on new customer acquisition.
+Every revenue gain is offset by the cost of replacing churned customers.
+A 5% improvement in Month-1 retention would compound significantly 
+given the current order volume scale.
+
+Recommendation: Introduce a post-purchase loyalty trigger — targeted  email or app push within 7 days of delivery offering a category-specific discount based on first purchase behavior.
+
+
+
+Finding 2 — Delivery Delay Directly Destroys Review Scores:
+
+On-time deliveries average 4.08 out of 5 . Orders delayed by just 5–10 days  average 1.83 out of 5 which is a 55% score collapse.  Orders delayed 20+ days scored 1.75 .
+
+
+
+Delivery Timing
+Avg Review Score
+Volume
+Early 10+ days
+4.23
+~60,000
+On Time
+4.08
+~22,000
+Late 1–5 days
+3.26
+~9,000
+Late 5–10 days
+1.83
+~2,000
+Late 20+ days
+1.75
+~500
+
+
+
+Implication: 7.4% of orders are late. Given the review score damage, these late orders actively harm platform reputation and suppress repeat intent.
+
+Recommendation: Negotiate logistics SLAs with carriers serving  high-latency states. Flag at-risk orders at T+7 days for proactive  customer communication.
+
+
+Finding 3 — Geographic Logistics Failure in Northeast Brazil:
+
+
+States AL (Alagoas) and MA (Maranhão) have late delivery rates  exceeding 20% against a national average of 9.9%. Both are Northeast states with underdeveloped logistics infrastructure.
+
+SP (São Paulo) generates ~R$7M revenue 40%+ of total platform revenue while also maintaining below-average late delivery rates, confirming infrastructure quality correlates with business performance.
+
+Recommendation: Audit last-mile carrier contracts for AL, MA, SE, CE. Consider regional fulfillment partnerships or longer estimated delivery windows for Northeast customers to manage expectations.
+
+
+
+
+
+Finding 4 — Freight Margin Risk in Select Categories: 
+
+
+21.6% of all order items have freight costs exceeding 30% of total 
+order value. Two significant categories cross this threshold at scale.
+
+Top performing categories by revenue with healthy freight ratios:
+
+Health Beauty
+R$1.2M revenue
+~20% freight ratio
+Watches Gifts 
+R$1.1M revenue
+~13% freight ratio (most efficient)
+Bed Bath Table
+R$1.0M revenue
+~20% freight ratio
+
+
+Recommendation: Implement minimum order value thresholds for high-freight-ratio categories, or introduce freight contribution pricing to protect margins.
+
+Finding 5 — Payment Behavior & Revenue Concentration:
+
+
+Credit card drives 73.9% of orders and R$14M+ in revenue. Credit card buyers have the highest AOV at ~R$178 vs voucher buyers at ~R$130. Boleto (bank slip) represents a significant unbanked customer segment at 19% of orders worth R$4M.
+
+Recommendation: Prioritize credit card UX optimization and installment plan promotion these buyers spend more and likely have higher LTV potential.
+
+Finding 6 — Peak Ordering Window (Marketing Timing)
+
+
+Order volume peaks Monday–Wednesday between 10am–4pm (Brasília time). Weekend volume is 30–40% lower than weekday peaks. Early morning  (midnight–8am) is near-zero across all days.
+
+Recommendation: Concentrate paid marketing spend and promotional pushes in the Mon–Wed 10am–3pm window for maximum conversion efficiency.
+
+Technical Notes: 
+
+
+- Dataset: 99,441 orders, 9 relational tables, 100k+ order items
+- Analysis period: 2017-02 to 2018-08 (launch noise removed)
+- 667 duplicate review records identified and deduplicated
+- 13 untranslated product categories manually mapped
+- All analysis conducted on delivered orders only (96,478 records)
