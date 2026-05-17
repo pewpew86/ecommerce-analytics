@@ -153,13 +153,15 @@ Credit card buyers have highest AOV at R$178 vs voucher at R$130.
 
 ## 📂 Dataset
 
-**Source:** [Olist Brazilian E-Commerce — Kaggle]
+Source: [Olist Brazilian E-Commerce — Kaggle]
 (https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
 > Raw data files are not tracked in this repository.
 > Download from Kaggle and place in `/data/raw/`
 
 ---
+
+📥 Download Power BI File (.pbix): https://drive.google.com/drive/folders/1pOfNZFZzs1TfTuHsm0_4UJFslBtE2c-P?usp=drive_link 
 
 ## 👤 Author: Golam Rabbi 
 
